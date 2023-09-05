@@ -17,11 +17,11 @@ Data streaming workloads often require data in the stream to be enriched via ext
 For example, assume you are receiving coordinates data from a GPS device and need to understand how these coordinates map with physical geographic locations; you need to enrich it with geolocation data.
 
 For this repository we are using an example of a temperature sensor network, (1) that emits temperature information and status. These events get ingested into (2) [Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams). Downstream systems additionally require the brand and country code information, in order to analyze e.g. the reliability per brand and temperature per plant side.
-Based on the sensor ID we (3) enrich this sensor information from the Sensor Info API. The resulting enriched stream (4) can then be analyzed in [Amazon Kinesis Data Analytics Studio Notebook](https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-notebook.html).
+Based on the sensor ID we (3) enrich this sensor information from the Sensor Info API. The resulting enriched stream (4) can then be analyzed in [Amazon Managed Service for Apache Flink Studio Notebook](https://aws.amazon.com/managed-service-apache-flink/studio/).
 
 ![Architecture overview](docs/Architecture%20overview.png)
 
-You can use several approaches to enrich your real-time data in [Amazon Kinesis Data Analytics](https://aws.amazon.com/kinesis/data-analytics) depending on your use case and Apache Flink abstraction level. Each method has different effects on the throughput, network traffic, and CPU (or memory) utilization.
+You can use several approaches to enrich your real-time data in [Amazon Managed Service for Apache Flink](https://aws.amazon.com/managed-service-apache-flink) depending on your use case and Apache Flink abstraction level. Each method has different effects on the throughput, network traffic, and CPU (or memory) utilization.
 
 For a general overview on how to use data enrichment patterns in Flink, see also our blog post [Common streaming data enrichment patterns in Amazon Kinesis Data Analytics for Apache Flink](https://aws.amazon.com/blogs/big-data/common-streaming-data-enrichment-patterns-in-amazon-kinesis-data-analytics-for-apache-flink).
 
