@@ -26,7 +26,14 @@ You can use several approaches to enrich your real-time data in [Amazon Managed 
 For a general overview on how to use data enrichment patterns in Flink, see also our blog post [Common streaming data enrichment patterns in Amazon Kinesis Data Analytics for Apache Flink](https://aws.amazon.com/blogs/big-data/common-streaming-data-enrichment-patterns-in-amazon-kinesis-data-analytics-for-apache-flink).
 
 
+## Getting started
+
+To get started, you can deploy this Flink Application for example with [Amazon Managed Service for Apache Flink](https://aws.amazon.com/managed-service-apache-flink), see also [Getting Started with Amazon Managed Service for Apache Flink](https://aws.amazon.com/managed-service-apache-flink/getting-started/).
+
+You can use also every other Flink deployment option, refer to [Flink Documentation - Deployment](https://nightlies.apache.org/flink/flink-docs-release-1.17/docs/deployment/overview/).
+
 ## Load testing template
+
 In order to test the application you can use the [Amazon Kinesis Data Generator (KDG)](https://github.com/awslabs/amazon-kinesis-data-generator) provides you with a user-friendly UI that runs directly in your browser. With the KDG, you can do the following:
 
 * Create templates that represent records for your specific use cases
@@ -60,6 +67,7 @@ To overcome this limitations, the repository [Amazon Kinesis Load Testing with L
 
 
 ## Project structure
+
 ```
 docs/                               -- Contains project documentation
 notebooks/                          -- Contains Zeppelin notebooks for analysing the data
