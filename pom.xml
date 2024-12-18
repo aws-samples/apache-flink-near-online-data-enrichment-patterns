@@ -8,13 +8,13 @@
     <packaging>jar</packaging>
 
     <properties>
-        <flink.version>1.15.2</flink.version>
+        <flink.version>1.20.0</flink.version>
         <aws.kda.version>1.2.0</aws.kda.version>
 
         <target.java.version>11</target.java.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
-        <log4j.version>2.17.1</log4j.version>
+        <log4j.version>2.24.3</log4j.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -48,13 +48,13 @@
         <dependency>
             <groupId>org.asynchttpclient</groupId>
             <artifactId>async-http-client</artifactId>
-            <version>2.2.0</version>
+            <version>3.0.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kinesis</artifactId>
-            <version>${flink.version}</version>
+            <version>1.16.3</version>
         </dependency>
 
         <dependency>
@@ -66,7 +66,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
-            <version>4.4.15</version>
+            <version>4.4.16</version>
         </dependency>
 
         <dependency>
@@ -100,14 +100,14 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.2</version>
+            <version>5.9.3</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.21.0</version>
+            <version>3.26.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
