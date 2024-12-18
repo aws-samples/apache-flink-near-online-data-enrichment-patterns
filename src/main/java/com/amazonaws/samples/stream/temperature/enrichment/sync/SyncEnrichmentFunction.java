@@ -5,6 +5,9 @@ import com.amazonaws.samples.stream.temperature.event.SensorInfo;
 import com.amazonaws.samples.stream.temperature.event.Temperature;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.time.Duration;
+
 import org.apache.flink.api.common.functions.RichMapFunction;
 import org.apache.flink.configuration.Configuration;
 import org.asynchttpclient.AsyncHttpClient;
@@ -22,7 +25,7 @@ public class SyncEnrichmentFunction extends RichMapFunction<Temperature, Enriche
     public void open(Configuration parameters) throws Exception {
         DefaultAsyncHttpClientConfig.Builder clientBuilder = Dsl
                 .config()
-                .setConnectTimeout(750)
+                .setConnectTimeout(Duration.ofMillis(750))
                 .setMaxRequestRetry(3)
                 .setKeepAlive(true);
         this.client = Dsl.asyncHttpClient(clientBuilder);
