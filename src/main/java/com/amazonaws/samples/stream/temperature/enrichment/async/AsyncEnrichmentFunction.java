@@ -13,6 +13,7 @@ import org.asynchttpclient.DefaultAsyncHttpClientConfig;
 import org.asynchttpclient.Dsl;
 import org.asynchttpclient.Response;
 
+import java.time.Duration;
 import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -36,8 +37,8 @@ public class AsyncEnrichmentFunction extends RichAsyncFunction<Temperature, Enri
         super.open(parameters);
         DefaultAsyncHttpClientConfig.Builder clientBuilder = Dsl
                 .config()
-                .setConnectTimeout(750)
-                .setRequestTimeout(2500)
+                .setConnectTimeout(Duration.ofMillis(750))
+                .setRequestTimeout(Duration.ofMillis(2500))
                 .setMaxRequestRetry(3)
                 .setKeepAlive(true);
         client = Dsl.asyncHttpClient(clientBuilder);
