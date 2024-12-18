@@ -1,0 +1,37 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: [11, 17, 21]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up JDK ${{ matrix.java-version }}
+      uses: actions/setup-java@v3
+      with:
+        java-version: ${{ matrix.java-version }}
+        distribution: 'corretto'
+        cache: maven
+
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+
+    - name: Run tests
+      run: mvn test
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: failure()
+      with:
+        name: test-results-java-${{ matrix.java-version }}
+        path: target/surefire-reports

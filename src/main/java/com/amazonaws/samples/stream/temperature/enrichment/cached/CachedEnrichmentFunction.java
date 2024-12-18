@@ -19,6 +19,8 @@ import org.asynchttpclient.DefaultAsyncHttpClientConfig;
 import org.asynchttpclient.Dsl;
 import org.asynchttpclient.Response;
 
+import java.time.Duration;
+
 public class CachedEnrichmentFunction extends KeyedProcessFunction<String, Temperature, EnrichedTemperature> {
 
     private static final long serialVersionUID = 2098635244857937717L;
@@ -40,7 +42,7 @@ public class CachedEnrichmentFunction extends KeyedProcessFunction<String, Tempe
         super.open(configuration);
         DefaultAsyncHttpClientConfig.Builder clientBuilder = Dsl
                 .config()
-                .setConnectTimeout(750)
+                .setConnectTimeout(Duration.ofMillis(750))
                 .setMaxRequestRetry(3)
                 .setKeepAlive(true);
         client = Dsl.asyncHttpClient(clientBuilder);
